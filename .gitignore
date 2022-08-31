@@ -1,0 +1,4 @@
+.viscode/*
+*.exe
+*.o
+*.win
