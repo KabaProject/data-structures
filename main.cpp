@@ -26,7 +26,12 @@ int main(int argc, char** argv) {
 				cin >> number;
 				cout << "\n\n";
 				
-				pile.push(number);
+				try{
+					pile.push(number);
+				}catch(string error){
+					cout << error;
+				}
+				
 				pile.print();
 				break;
 			case 2:
@@ -52,7 +57,7 @@ int main(int argc, char** argv) {
 
 	}while(!flag);
 
-	cout << "Datos finales: \n";
+	cout << "\nDatos finales: \n";
 	pile.print();
 	cout << "\n\nGracias por su visita :)";
 }

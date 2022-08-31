@@ -49,8 +49,7 @@ void Pile::print(){
 
 void Pile::push(int data){
 	if(this->is_filled()){
-		cout << "Pila desbordada, dato no agregado.\n";
-		return;
+		throw (string) "Pila desbordada, dato no agregado.\n";
 	}
 	
 	this->arr[this->pos + 1] = data;
