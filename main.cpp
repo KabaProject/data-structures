@@ -1,4 +1,4 @@
-#include "pile.h"
+#include "stack.h"
 #include <iostream>
 #include <string>
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
@@ -6,7 +6,7 @@
 using namespace std;
 
 int main(int argc, char** argv) {
-	Pile pile;
+	Stack<int> stack;
 	bool flag = false;
 	int number;
 	int option;
@@ -27,23 +27,23 @@ int main(int argc, char** argv) {
 				cout << "\n\n";
 				
 				try{
-					pile.push(number);
+					stack.push(number);
 				}catch(string error){
 					cout << error;
 				}
 				
-				pile.print();
+				stack.print();
 				break;
 			case 2:
 				try{
 					cout << "\n\n";
-					number = pile.pop();
+					number = stack.pop();
 					cout << "Valor extraido: " << number << "\n";
 				}catch(string error){
 					cout << error;
 				}
 
-				pile.print();
+				stack.print();
 				break;
 			default:
 				cout << "\n\n";
@@ -58,6 +58,6 @@ int main(int argc, char** argv) {
 	}while(!flag);
 
 	cout << "\nDatos finales: \n";
-	pile.print();
+	stack.print();
 	cout << "\n\nGracias por su visita :)";
 }
