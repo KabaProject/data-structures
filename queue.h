@@ -15,7 +15,13 @@ class Queue {
 	private:
 		static const int MAX = 7;
 		T arr[MAX];
+		/**
+		 * Points the first element
+		 */
 		int head = -1;
+		/**
+		 * Points the last element
+		 */
 		int tail = -1;
 };
 
@@ -29,6 +35,9 @@ bool Queue<T>::is_filled(){
 	return (this->tail >= this->MAX - 1);
 }
 
+/**
+ * Prints the Queue elements located in its array
+ */
 template <class T>
 void Queue<T>::print(){
 	
@@ -52,6 +61,10 @@ void Queue<T>::print(){
 	}
 }
 
+/**
+ * Add an element in the Queue array until its filled
+ * @param data Element to add
+ */
 template <class T>
 void Queue<T>::push(T data){
 	if(this->is_filled()){
@@ -68,6 +81,9 @@ void Queue<T>::push(T data){
 	return;
 }
 
+/**
+ * Remove an element in the Queue array until its empty
+ */
 template <class T>
 T Queue<T>::pop(){
 	if(this->is_empty()){
