@@ -43,17 +43,24 @@ void Queue<T>::print(){
 	
 	cout << "Cola: [";
 
-	if(this->is_empty()){
-		cout << "] (Vacia).\n";
-		return;
-	}
-
-	for(int i = this->head; i <= this->tail; i++){
-		if(i < this->tail){
-			cout << this->arr[i] << ", ";
+	for(int i = 0; i < this->MAX; i++){
+		
+		if(i >= this->head && i <= this->tail && this->head != -1){
+			cout << this->arr[i];
 		}else{
-			cout << this->arr[i] << "] ";
+			cout << "  ";
 		}
+		
+		if(i < this->MAX - 1){
+			cout << ", ";
+		}else{
+			cout << "] ";
+		}
+		
+	}
+	
+	if(this->is_empty()){
+		cout << "(Vacia).\n";
 	}
 
 	if(this->is_filled()){
