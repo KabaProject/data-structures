@@ -13,7 +13,7 @@ class CircularQueue {
 		void print();
 		
 	private:
-		static const int MAX = 3;
+		static const int MAX = 7;
 		T arr[MAX];
 		/**
 		 * Points the first element
@@ -66,12 +66,15 @@ void CircularQueue<T>::print(){
 	}
 	
 	if(this->is_empty()){
-		cout << "(Vacia).\n";
+		cout << "(Vacia).";
 	}
 
 	if(this->is_filled()){
-		cout << "(Llena).\n";
+		cout << "(Llena).";
 	}
+
+	cout << "\n\nFRENTE: " << this->head + 1;
+	cout << "\nFINAL: " << this->tail + 1 << "\n";
 }
 
 /**
