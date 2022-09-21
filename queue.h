@@ -60,12 +60,15 @@ void Queue<T>::print(){
 	}
 	
 	if(this->is_empty()){
-		cout << "(Vacia).\n";
+		cout << "(Vacia).";
 	}
 
 	if(this->is_filled()){
-		cout << "(Llena).\n";
+		cout << "(Llena).";
 	}
+
+	cout << "\n\nFRENTE: " << this->head + 1;
+	cout << "\nFINAL: " << this->tail + 1 << "\n";
 }
 
 /**
