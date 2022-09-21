@@ -13,8 +13,8 @@ class Stack {
 		void print();
 		
 	private:
-		int MAX = 7;
-		T arr[7];
+		static const int MAX = 7;
+		T arr[MAX];
 		int pos = -1;
 };
 
@@ -33,22 +33,29 @@ void Stack<T>::print(){
 	
 	cout << "Pila: [";
 
-	if(this->is_empty()){
-		cout << "] (Vacia).\n";
-		return;
+	for(int i = 0; i < this->MAX; i++){
+		if(i <= this->pos){
+			cout << this->arr[i];
+		}else{
+			cout << "  ";
+		}
+
+		if(i < (this->MAX - 1)){
+			cout << ", ";
+		}else{
+			cout << "] ";
+		}
 	}
 
-	for(int i = 0; i <= this->pos; i++){
-		if(i < this->pos){
-			cout << this->arr[i] << ", ";
-		}else{
-			cout << this->arr[i] << "] ";
-		}
+	if(this->is_empty()){
+		cout << "(Vacia).\n";
 	}
 
 	if(this->is_filled()){
 		cout << "(Llena).\n";
 	}
+
+	cout << "\nTOPE: " << this->pos + 1 << "\n";
 }
 
 template <class T>
